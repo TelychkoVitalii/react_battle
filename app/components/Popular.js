@@ -1,5 +1,6 @@
 const React = require('react');
 const api = require('../utils/api');
+const Loading = require('./Loading');
 
 function SelectedLanguage(props) {
     const languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
@@ -82,7 +83,7 @@ class Popular extends React.Component {
                     onSelect={this.updateLanguage}
                 />
                 {!this.state.repos ?
-                    <p>Loading</p> :
+                    <Loading /> :
                     <RepoGrid repos={this.state.repos} />
                 }
             </div>
